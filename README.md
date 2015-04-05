@@ -12,18 +12,18 @@ can use all the provided interfaces.
 
 ##How to use
 
-    #include "libcss.h" //include the header
+    #include "libcsv.h" //include the header
     #include <iostream>
     #include <fstream>
     #include <deque>
-    #include <stream>
+    #include <string>
     int main() {
-      csv::csv_handler<int>handler;** //ceate a handler object for int 
+      csv::csv_handler<int>handler; //create a handler object for int 
 									 //(from namespace csv)
       std::ifstream input("file.csv"); //open input file
       std::ofstream output("file2.csv"); //open output file
       std::deque<int> data; //deque object to store data (is used like vector)
-      std::stream buffer;
+      std::string buffer;
       
       //stream version
       input >> handler >> data; //read one line from input and store
@@ -41,8 +41,8 @@ can use all the provided interfaces.
       data = handler.get_parsed_line(); //get parsed data and store in data
       handler.set_parsed_line(data); //put parsed data into handler 
 									//(and create CSV string)
-      buffer =  handler.get_csv_line(); //get CSV Sttring and store into buffer
-      output << buffer //write buffer into file
+      buffer =  handler.get_csv_line(); //get CSV String and store into buffer
+      output << buffer; //write buffer into file
       
     	return 0;
     }
@@ -66,7 +66,7 @@ and DATA ::getline():
     buffer = parser.get_line();
     output << buffer;
 The data stored in the csv object are deleted from there after get()ting them or streaming them out of the object.
-
+The csv objects work with all instances and derivations of ostream and istream.
 ##License
 Copyright 2015 DevWurm<br>
 'csv_library' is offered under GPL 3 License (Read ./license/gpl-3.0.txt)

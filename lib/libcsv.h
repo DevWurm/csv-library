@@ -38,7 +38,8 @@
 #define LIBCSV_H_
 
 #include <deque>
-#include <fstream>
+#include <ostream>
+#include <istream>
 #include <sstream>
 #include <string>
 #include <algorithm>
@@ -46,8 +47,8 @@
 #include <iterator>
 
 using std::deque;
-using std::ifstream;
-using std::ofstream;
+using std::istream;
+using std::ostream;
 using std::string;
 using std::stringstream;
 using std::getline;
@@ -62,7 +63,7 @@ private:
 	deque<T> line;
 public:
 	template<typename S>
-	friend csv_parser<S>& operator>> (ifstream& input, csv_parser<S>& parser); //file input stream operator
+	friend csv_parser<S>& operator>> (istream& input, csv_parser<S>& parser); //file input stream operator
 	deque<T>& operator>> (deque<T>& target); //data output operator
 	deque<T> get_line(); //get parsed line
 	void set_line(string input);  //set line and parse
@@ -75,7 +76,7 @@ private:
 public:
 	template<typename S>
 	friend csv_creator<S>& operator>>(deque<S>& input, csv_creator<S>& creator); //data input stream operator
-	ofstream& operator>>(ofstream& output); //file output operator
+	ostream& operator>>(ostream& output); //file output operator
 	string get_line(); //set data and create csv
 	void set_line(deque<T>& input); //get created csv
 };
@@ -92,7 +93,7 @@ public:
 
 //csv_parser
 template<typename T>
-csv_parser<T>& operator>> (ifstream& input, csv_parser<T>& parser) {
+csv_parser<T>& operator>> (istream& input, csv_parser<T>& parser) {
 	parser.line.clear(); //clear the data
 	T buffer;
 	string line;
@@ -166,7 +167,7 @@ deque<T> csv_parser<T>::get_line(){ //return data
 
 //csv_creator
 template<typename T>
-ofstream& csv_creator<T>::operator>>(ofstream& output) {
+ostream& csv_creator<T>::operator>>(ostream& output) {
 	output << line; // stream csv line into file
 	return output;
 }

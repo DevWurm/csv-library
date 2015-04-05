@@ -36,19 +36,19 @@
 
 #include "../Headers/csv.h"
 #include <deque>
-#include <fstream>
+#include <ostream>
 #include <sstream>
 #include <string>
 
 using std::deque;
-using std::ifstream;
+using std::ostream;
 using std::stringstream;
 using std::string;
 
 namespace csv {
 
 template<typename T>
-ofstream& csv_creator<T>::operator>>(ofstream& output) {
+ostream& csv_creator<T>::operator>>(ostream& output) {
 	output << line; // stream csv line into file
 	return output;
 }

@@ -36,13 +36,13 @@
 
 #include "../Headers/csv.h"
 #include <deque>
-#include <fstream>
+#include <istream>
 #include <sstream>
 #include <string>
 #include <algorithm>
 
 using std::deque;
-using std::ifstream;
+using std::istream;
 using std::stringstream;
 using std::string;
 using std::getline;
@@ -51,7 +51,7 @@ using std::copy;
 namespace csv {
 
 template<typename T>
-csv_parser<T>& operator>> (ifstream& input, csv_parser<T>& parser) {
+csv_parser<T>& operator>> (istream& input, csv_parser<T>& parser) {
 	parser.line.clear(); //clear the data
 	T buffer;
 	string line;

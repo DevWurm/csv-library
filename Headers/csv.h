@@ -38,12 +38,13 @@
 #define CSV_H_
 
 #include <deque>
-#include <fstream>
+#include <ostream>
+#include <istream>
 #include <string>
 
 using std::deque;
-using std::ifstream;
-using std::ofstream;
+using std::istream;
+using std::ostream;
 using std::string;
 
 namespace csv {
@@ -54,7 +55,7 @@ private:
 	deque<T> line;
 public:
 	template<typename S>
-	friend csv_parser<S>& operator>> (ifstream& input, csv_parser<S>& parser); //file input stream operator
+	friend csv_parser<S>& operator>> (istream& input, csv_parser<S>& parser); //file input stream operator
 	deque<T>& operator>> (deque<T>& target); //data output operator
 	deque<T> get_line(); //get parsed line
 	void set_line(string input);  //set line and parse
@@ -67,7 +68,7 @@ private:
 public:
 	template<typename S>
 	friend csv_creator<S>& operator>>(deque<S>& input, csv_creator<S>& creator); //data input stream operator
-	ofstream& operator>>(ofstream& output); //file output operator
+	ostream& operator>>(ostream& output); //file output operator
 	string get_line(); //set data and create csv
 	void set_line(deque<T>& input); //get created csv
 };
