@@ -69,7 +69,7 @@ and DATA ::getline():
 
 ##License
 Copyright 2015 DevWurm<br>
-'directory_library' is offered under GPL 3 License (Read ./license/gpl-3.0.txt)
+'csv_library' is offered under GPL 3 License (Read ./license/gpl-3.0.txt)
 
 ##Documentation
 Documentation will be offered soon. (Email me if you have any questions)
