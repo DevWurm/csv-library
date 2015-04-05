@@ -76,7 +76,7 @@ Documentation will be offered soon. (Email me if you have any questions)
 
 ##Setup
 <b>Building:</b><br>
-Because the objects are templates, all souces are written in Header files. There is a 'real Header' (/Header/csv.h) and
+Because the objects are templates, all souces are written in Header files. There is a 'real Header' (/Headers/csv.h) and
 several 'source header' (/Source/*.h), because the code is more structured in this way. For using all declarations, 
 definitions and dependencies are 'copyed together' in a 'library header' (/lib/libcsv.h'). You can use this header
 or copy the suorces together yourself (make sure all includes and usings are given in the output file once and then copy
