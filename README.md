@@ -65,7 +65,7 @@ and DATA ::getline():
     parser.set_line(data);
     buffer = parser.get_line();
     output << buffer;
-
+The data stored in the csv object are deleted from there after get()ting them or streaming them out of the object.
 
 ##License
 Copyright 2015 DevWurm<br>
