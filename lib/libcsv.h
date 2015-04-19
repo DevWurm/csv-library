@@ -168,7 +168,7 @@ deque<T> csv_parser<T>::get_line(){ //return data
 //csv_creator
 template<typename T>
 ostream& csv_creator<T>::operator>>(ostream& output) {
-	output << line << '\n'; // stream csv line into output
+	output << line; // stream csv line into output
 	return output;
 }
 
