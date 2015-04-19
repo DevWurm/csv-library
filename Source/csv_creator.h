@@ -49,7 +49,7 @@ namespace csv {
 
 template<typename T>
 ostream& csv_creator<T>::operator>>(ostream& output) {
-	output << line; // stream csv line into file
+	output << line << '\n'; // stream csv line into output
 	return output;
 }
 
