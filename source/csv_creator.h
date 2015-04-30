@@ -34,6 +34,9 @@
 	    Programm erhalten haben. Wenn nicht, siehe <http://www.gnu.org/licenses/>.
 */
 
+#ifndef __csv_creator_h__
+#define __csv_creator_h__
+
 #include <deque>
 #include <ostream>
 #include <sstream>
@@ -88,3 +91,5 @@ void csv_creator<T>::set_line (deque<T>& input) {
 }
 
 }
+
+#endif

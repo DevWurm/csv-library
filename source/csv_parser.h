@@ -34,6 +34,8 @@
 	    Programm erhalten haben. Wenn nicht, siehe <http://www.gnu.org/licenses/>.
 */
 
+#ifndef __csv_parser_h__
+#define __csv_parser_h__
 #include <deque>
 #include <istream>
 #include <sstream>
@@ -125,5 +127,5 @@ deque<T> csv_parser<T>::get_line(){ //return data
 
 }
 
-
+#endif
 

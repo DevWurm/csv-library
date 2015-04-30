@@ -34,9 +34,6 @@
 	    Programm erhalten haben. Wenn nicht, siehe <http://www.gnu.org/licenses/>.
 */
 
-#ifndef LIBCSV_H_
-#define LIBCSV_H_
-
 //header
 #include "../headers/csv.h"
 
@@ -45,4 +42,3 @@
 #include "../source/csv_handler.h"
 #include "../source/csv_parser.h"
 
-#endif /* LIBCSV_H_ */

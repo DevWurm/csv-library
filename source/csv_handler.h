@@ -34,6 +34,9 @@
 	    Programm erhalten haben. Wenn nicht, siehe <http://www.gnu.org/licenses/>.
 */
 
+#ifndef __csv_handler_h__
+#define __csv_handler_h__
+
 #include <deque>
 #include <string>
 #include "../headers/csv.h"
@@ -64,3 +67,5 @@ void csv_handler<T>::set_parsed_line(deque<T>& input) {
 }
 
 }
+
+#endif
