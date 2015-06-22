@@ -1,2 +1,4 @@
 all:
-	g++ -E lib/libcsv.h -o libcsv.h
+	mkdir -p ./libcsv
+	cp -r headers/ libcsv
+	cp -r source/ libcsv
